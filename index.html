@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quanto tempo para o ENEM 2020?</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+    <style>
+        .container {
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: max-content;
+        }
+
+        .foo {
+            margin: 0;
+            font-size: min(7.5vh, 7.5vw);
+            font-family: 'Press Start 2P', regular;
+        }
+    </style>
+    <style>
+        .wrapper { 
+            height: 100%;
+            width: 100%;
+            left:0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+            background-size: 1800% 1800%;
+            
+            -webkit-animation: rainbow 18s ease infinite;
+            -z-animation: rainbow 18s ease infinite;
+            -o-animation: rainbow 18s ease infinite;
+            animation: rainbow 18s ease infinite;
+        }
+        
+        @-webkit-keyframes rainbow {
+            0%{background-position:0% 82%}
+            50%{background-position:100% 19%}
+            100%{background-position:0% 82%}
+        }
+        @-moz-keyframes rainbow {
+            0%{background-position:0% 82%}
+            50%{background-position:100% 19%}
+            100%{background-position:0% 82%}
+        }
+        @-o-keyframes rainbow {
+            0%{background-position:0% 82%}
+            50%{background-position:100% 19%}
+            100%{background-position:0% 82%}
+        }
+        @keyframes rainbow { 
+            0%{background-position:0% 82%}
+            50%{background-position:100% 19%}
+            100%{background-position:0% 82%}
+        }
+    </style>
+<body>
+    <!-- Display the countdown timer in an element -->
+    <div class="wrapper">
+        <div class="container">
+            <h1 class="foo">ENEM EM</h1>
+            <div style="padding:50px"></div>
+            <h1 id="demo" class="foo"></h1>
+            <h1 id="cabo" class="foo"></h1>
+        </div>
+    </div>
+
+    <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Jan 14, 2021 12:59:59").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Adds 0 to beginning
+    function f(n) {
+        return (n < 10) ? `0${n}` : n;
+    }
+
+    // Display the result in the element with id="demo"
+    document.getElementById("demo").innerHTML = f(days) + "D " + f(hours) + "H "
+    + f(minutes) + "M " + f(seconds) + "S ";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "00D 00H 00M 00S";
+        document.getElementById("cabo").innerHTML = "&#x1F973; É AGORA!!! &#x1F973;";
+    }
+    }, 1000);
+    </script>
+</body>
+</html>
